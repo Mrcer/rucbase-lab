@@ -129,7 +129,7 @@ void DiskManager::create_file(const std::string &path) {
     if(is_file(path)) // 检查是否已经存在一份此文件
         throw FileExistsError(path);
     else{
-        int open_rst = open(path.c_str(), O_CREAT | O_RDWR, S_IRUSR | S_IWUSR);  //0666表示文件权限
+        int open_rst = open(path.c_str(), O_CREAT | O_RDWR, S_IRUSR | S_IWUSR);  //具备具有读取和写入的权限
         if(open_rst == -1)
             throw InternalError("Fail to create a new file in DiskManager::create_file");
         else
