@@ -150,7 +150,7 @@ void DiskManager::destroy_file(const std::string &path) {
     else{
         int fd = open(path.c_str(), O_RDONLY | O_NONBLOCK);
         close(fd); //先彻底关闭文件
-        unlink(path.c_str());
+        unlink(path.c_str()); //删除指定路径的文件
     }
 }
 
