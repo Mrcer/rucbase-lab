@@ -77,7 +77,6 @@ void DiskManager::read_page(int fd, page_id_t page_no, char *offset, int num_byt
  */
 page_id_t DiskManager::allocate_page(int fd) {
     // 简单的自增分配策略，指定文件的页面编号加1
-
     // 需要调用类的封装函数进行操作
     page_id_t pno = get_fd2pageno(fd);
 	set_fd2pageno(fd,pno+1);
