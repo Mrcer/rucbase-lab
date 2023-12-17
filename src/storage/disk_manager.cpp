@@ -165,7 +165,6 @@ int DiskManager::open_file(const std::string &path) {
     // Todo:
     // 调用open()函数，使用O_RDWR模式
     // 注意不能重复打开相同文件，并且需要更新文件打开列表
-
     std::unordered_set<std::string> open_files_;
     if(open_files_.count(path) > 0){ // 判断文件是否已被打开
         throw InternalError("The file has already been opened.");
@@ -197,7 +196,6 @@ void DiskManager::close_file(int fd) {
     // Todo:
     // 调用close()函数
     // 注意不能关闭未打开的文件，并且需要更新文件打开列表
-
     // 检查文件是否已经打开
     if (fd2path_.count(fd) == 0) {
         throw InternalError("File is not opened");
